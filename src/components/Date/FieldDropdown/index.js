@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Controller } from "react-hook-form";
 import { useSettings } from "../../../providers/SettingsContext";
 import NumberDropdown from "./NumberDropdown";
@@ -123,12 +122,5 @@ const FieldDropdown = ({ fieldData, name, control, type, labelFor }) => {
   );
 };
 
-FieldDropdown.propTypes = {
-  fieldData: PropTypes.object.isRequired,
-  name: PropTypes.string.isRequired,
-  control: PropTypes.object.isRequired,
-  type: PropTypes.string.isRequired,
-  labelFor: PropTypes.string,
-};
 
 export default FieldDropdown;

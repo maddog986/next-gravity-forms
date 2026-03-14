@@ -1,4 +1,3 @@
-import { bool, func, object } from "prop-types";
 import React from "react";
 
 const VisibilityToggler = ({ onClick, strings, active }) => {
@@ -21,10 +20,5 @@ const VisibilityToggler = ({ onClick, strings, active }) => {
   );
 };
 
-VisibilityToggler.propTypes = {
-  onClick: func.isRequired,
-  active: bool,
-  strings: object,
-};
 
 export default VisibilityToggler;

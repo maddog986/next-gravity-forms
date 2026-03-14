@@ -1,5 +1,4 @@
 import classnames from "classnames";
-import PropTypes from "prop-types";
 import React from "react";
 import InputWrapper from "../../components/InputWrapper";
 
@@ -26,13 +25,3 @@ const Html = ({ fieldData, labelFor, wrapClassName, ...wrapProps }) => {
 
 export default Html;
 
-Html.propTypes = {
-  fieldData: PropTypes.shape({
-    cssClass: PropTypes.string,
-    content: PropTypes.string,
-    type: PropTypes.string,
-  }),
-  labelFor: PropTypes.string,
-  wrapClassName: PropTypes.string,
-  wrapProps: PropTypes.object,
-};

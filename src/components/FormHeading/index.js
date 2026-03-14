@@ -1,4 +1,3 @@
-import { string } from "prop-types";
 import React from "react";
 
 const FormHeading = ({ title, description }) => {
@@ -25,9 +24,5 @@ const FormHeading = ({ title, description }) => {
   );
 };
 
-FormHeading.propTypes = {
-  title: string,
-  description: string,
-};
 
 export default FormHeading;

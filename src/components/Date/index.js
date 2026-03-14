@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useFormContext } from "react-hook-form";
 import InputWrapper from "../InputWrapper";
 import { valueToLowerCase } from "../../utils/helpers";
@@ -50,13 +49,3 @@ const DateField = ({ fieldData, name, labelFor, ...wrapProps }) => {
 
 export default DateField;
 
-DateField.propTypes = {
-  fieldData: PropTypes.shape({
-    dateType: PropTypes.string,
-    id: PropTypes.number,
-  }),
-  value: PropTypes.string,
-  name: PropTypes.string,
-  labelFor: PropTypes.string,
-  wrapProps: PropTypes.object,
-};

@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import React from "react";
 import SubmitButton from "../../../components/Submit";
-import { array, bool, func, number, object, string } from "prop-types";
 import useResetPage from "./useResetPage";
 import { useFormContext } from "react-hook-form";
 import { checkConditionalRendering } from "../../../components/InputWrapper/helpers";
@@ -108,15 +107,5 @@ const PageNav = ({
   );
 };
 
-PageNav.propTypes = {
-  labelPlacement: string,
-  currentPage: number.isRequired,
-  setPage: func.isRequired,
-  isLastPage: bool.isRequired,
-  loading: bool.isRequired,
-  databaseId: number.isRequired,
-  nodes: array.isRequired,
-  lastPageButton: object,
-};
 
 export default PageNav;

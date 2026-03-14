@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { valueToLowerCase } from "../../utils/helpers";
 import { forwardRef } from "react";
 
@@ -35,21 +34,5 @@ const Input = forwardRef(function Input(
   );
 });
 
-Input.propTypes = {
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  fieldData: PropTypes.shape({
-    cssClass: PropTypes.string,
-    maxLength: PropTypes.number,
-    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    placeholder: PropTypes.string,
-    isRequired: PropTypes.bool,
-    type: PropTypes.string,
-    size: PropTypes.string,
-    autoComplete: PropTypes.string,
-  }),
-  name: PropTypes.string,
-  labelFor: PropTypes.string,
-  errors: PropTypes.object,
-};
 
 export default Input;

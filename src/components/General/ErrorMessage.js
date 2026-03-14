@@ -1,4 +1,3 @@
-import { number, oneOfType, string } from "prop-types";
 import React from "react";
 
 const ErrorMessage = ({ errorMessage, id }) => {
@@ -14,9 +13,5 @@ const ErrorMessage = ({ errorMessage, id }) => {
   );
 };
 
-ErrorMessage.propTypes = {
-  errorMessage: string.isRequired,
-  id: oneOfType([string, number]),
-};
 
 export default ErrorMessage;

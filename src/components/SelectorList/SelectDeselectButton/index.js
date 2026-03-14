@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useState } from "react";
 import { useSettings } from "../../../providers/SettingsContext";
 
@@ -49,9 +48,3 @@ const SelectDeselectButton = ({ id, name, choices, setValue }) => {
 
 export default SelectDeselectButton;
 
-SelectDeselectButton.propTypes = {
-  id: PropTypes.number,
-  name: PropTypes.string,
-  choices: PropTypes.array,
-  setValue: PropTypes.func,
-};

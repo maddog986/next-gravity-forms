@@ -1,4 +1,3 @@
-import { number, object } from "prop-types";
 import React from "react";
 
 const Confirmation = ({ databaseId, confirmation }) => {
@@ -19,9 +18,5 @@ const Confirmation = ({ databaseId, confirmation }) => {
   );
 };
 
-Confirmation.propTypes = {
-  databaseId: number.isRequired,
-  confirmation: object,
-};
 
 export default Confirmation;

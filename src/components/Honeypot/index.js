@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { useFormContext } from "react-hook-form";
 import InputWrapper from "../InputWrapper";
 import classnames from "classnames";
@@ -44,12 +43,5 @@ const Honeypot = ({ gfId, wrapClassName, fieldData, labelFor }) => {
   );
 };
 
-Honeypot.propTypes = {
-  fieldData: PropTypes.object,
-  value: PropTypes.string,
-  gfId: PropTypes.number,
-  wrapClassName: PropTypes.string,
-  labelFor: PropTypes.string,
-};
 
 export default Honeypot;

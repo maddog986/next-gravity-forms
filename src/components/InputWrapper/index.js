@@ -1,5 +1,4 @@
 import classnames from "classnames";
-import PropTypes from "prop-types";
 import React from "react";
 import { valueToLowerCase, isNonEmptyObject } from "../../utils/helpers";
 import { outputDescription } from "../../utils/inputSettings";
@@ -89,24 +88,3 @@ const InputWrapper = ({
 
 export default InputWrapper;
 
-InputWrapper.propTypes = {
-  children: PropTypes.node,
-  errors: PropTypes.object,
-  errorMessage: PropTypes.string,
-  inputData: PropTypes.shape({
-    description: PropTypes.string,
-    descriptionPlacement: PropTypes.string,
-    label: PropTypes.string,
-    isRequired: PropTypes.bool,
-    type: PropTypes.string,
-    conditionalLogic: PropTypes.object,
-    inputs: PropTypes.array,
-    choices: PropTypes.array,
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    isHidden: PropTypes.bool,
-  }),
-  ginputClassName: PropTypes.string,
-  labelFor: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  wrapClassName: PropTypes.string,
-  wrapId: PropTypes.string,
-};

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useSettings } from "../../providers/SettingsContext";
 
 const FormGeneralError = ({ errorCode, databaseId }) => {
@@ -32,9 +31,5 @@ const FormGeneralError = ({ errorCode, databaseId }) => {
   }
 };
 
-FormGeneralError.propTypes = {
-  errorCode: PropTypes.string.isRequired,
-  databaseId: PropTypes.number.isRequired,
-};
 
 export default FormGeneralError;

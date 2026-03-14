@@ -1,4 +1,3 @@
-import { bool, func, number, object, string } from "prop-types";
 import React, { useState } from "react";
 
 const OtherChoice = ({
@@ -61,15 +60,5 @@ const OtherChoice = ({
   );
 };
 
-OtherChoice.propTypes = {
-  index: number.isRequired,
-  strings: object.isRequired,
-  databaseId: number.isRequired,
-  id: number.isRequired,
-  register: func.isRequired,
-  name: string.isRequired,
-  isRequired: bool,
-  errorMessage: string,
-};
 
 export default OtherChoice;

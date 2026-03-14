@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { array, object } from "prop-types";
 import classnames from "classnames";
 import { useSettings } from "../../providers/SettingsContext";
 import FieldBuilder from "../FieldBuilder";
@@ -107,9 +106,5 @@ const FormBuilder = ({ nodes, preOnSubmit = {} }) => {
   );
 };
 
-FormBuilder.propTypes = {
-  nodes: array,
-  preOnSubmit: object,
-};
 
 export default FormBuilder;

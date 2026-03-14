@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 import { Controller } from "react-hook-form";
 import { useSettings } from "../../../providers/SettingsContext";
@@ -123,13 +122,5 @@ const Picker = ({ fieldData, name, inputId, labelFor, control, errors }) => {
   );
 };
 
-Picker.propTypes = {
-  control: PropTypes.object,
-  fieldData: PropTypes.object,
-  name: PropTypes.string,
-  inputId: PropTypes.number,
-  errors: PropTypes.object,
-  labelFor: PropTypes.string,
-};
 
 export default Picker;

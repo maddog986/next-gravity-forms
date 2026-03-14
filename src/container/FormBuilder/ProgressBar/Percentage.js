@@ -2,7 +2,6 @@ import React from "react";
 import { interpolateString, valueToLowerCase } from "../../../utils/helpers";
 import { useSettings } from "../../../providers/SettingsContext";
 import classNames from "classnames";
-import { array, bool, number, string } from "prop-types";
 
 const renderInterpolatedHtml = (template, values) => {
   const interpolatedString = interpolateString(template, values);
@@ -89,14 +88,5 @@ const Percentage = ({
   );
 };
 
-Percentage.propTypes = {
-  databaseId: number,
-  currentPage: number,
-  totalPages: number,
-  pageNames: array,
-  style: string,
-  isCompleted: bool,
-  progressbarCompletionText: string,
-};
 
 export default Percentage;

@@ -1,5 +1,4 @@
 import React, { forwardRef } from "react";
-import PropTypes from "prop-types";
 import { SubLabelWrapper } from "../../General";
 
 const NumberInput = forwardRef(
@@ -49,20 +48,5 @@ const NumberInput = forwardRef(
 
 NumberInput.displayName = "NumberInput";
 
-NumberInput.propTypes = {
-  selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  startNumber: PropTypes.number.isRequired,
-  endNumber: PropTypes.number.isRequired,
-  isRequired: PropTypes.bool,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  customLabel: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  subLabelPlacement: PropTypes.string,
-  fieldName: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  labelFor: PropTypes.string,
-};
 
 export default NumberInput;

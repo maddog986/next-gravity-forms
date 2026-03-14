@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { interpolateString } from "../../utils/helpers";
 
 const FilePreview = ({ removeFile, strings, files, databaseId, id }) => {
@@ -37,13 +36,5 @@ const FilePreview = ({ removeFile, strings, files, databaseId, id }) => {
   );
 };
 
-FilePreview.propTypes = {
-  files: PropTypes.array,
-  strings: PropTypes.object,
-  removeFile: PropTypes.func,
-  id: PropTypes.number,
-  databaseId: PropTypes.number,
-  accept: PropTypes.array,
-};
 
 export default FilePreview;

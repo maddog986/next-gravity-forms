@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { array, number } from "prop-types";
 import React from "react";
 
 const Steps = ({ databaseId, currentPage, totalPages, pageNames = [] }) => {
@@ -30,11 +29,5 @@ const Steps = ({ databaseId, currentPage, totalPages, pageNames = [] }) => {
   );
 };
 
-Steps.propTypes = {
-  databaseId: number.isRequired,
-  currentPage: number.isRequired,
-  totalPages: number.isRequired,
-  pageNames: array,
-};
 
 export default Steps;

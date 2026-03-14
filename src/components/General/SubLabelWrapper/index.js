@@ -1,6 +1,5 @@
 import React from "react";
 import classnames from "classnames";
-import PropTypes from "prop-types";
 import Label from "./Label";
 
 const SubLabelWrapper = ({
@@ -51,13 +50,3 @@ const SubLabelWrapper = ({
 
 export default SubLabelWrapper;
 
-SubLabelWrapper.propTypes = {
-  subLabelPlacement: PropTypes.string,
-  children: PropTypes.node,
-  label: PropTypes.string,
-  customLabel: PropTypes.string,
-  name: PropTypes.string,
-  className: PropTypes.string,
-  as: PropTypes.string,
-  labelFor: PropTypes.string,
-};

@@ -1,5 +1,4 @@
 import classnames from "classnames";
-import PropTypes from "prop-types";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import InputWrapper from "../InputWrapper";
@@ -99,19 +98,3 @@ const SelectorList = ({ fieldData, name, labelFor, ...wrapProps }) => {
 
 export default SelectorList;
 
-SelectorList.propTypes = {
-  fieldData: PropTypes.shape({
-    choices: PropTypes.array,
-    cssClass: PropTypes.string,
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    isRequired: PropTypes.bool,
-    size: PropTypes.string,
-    type: PropTypes.string,
-    errorMessage: PropTypes.string,
-    hasSelectAll: PropTypes.bool,
-    hasOtherChoice: PropTypes.bool,
-  }),
-  name: PropTypes.string,
-  labelFor: PropTypes.string,
-  wrapProps: PropTypes.object,
-};

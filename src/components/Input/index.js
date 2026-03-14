@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classnames from "classnames";
 import { useFormContext } from "react-hook-form";
 import { valueToLowerCase } from "../../utils/helpers";
@@ -73,20 +72,3 @@ const InputField = ({ fieldData, name, labelFor, ...wrapProps }) => {
 
 export default InputField;
 
-InputField.propTypes = {
-  fieldData: PropTypes.shape({
-    cssClass: PropTypes.string,
-    inputMaskValue: PropTypes.string,
-    maxLength: PropTypes.number,
-    placeholder: PropTypes.string,
-    isRequired: PropTypes.bool,
-    type: PropTypes.string,
-    size: PropTypes.string,
-    defaultValue: PropTypes.string,
-    errorMessage: PropTypes.string,
-  }),
-  value: PropTypes.string,
-  name: PropTypes.string,
-  labelFor: PropTypes.string,
-  wrapProps: PropTypes.object,
-};

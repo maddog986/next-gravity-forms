@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { Controller, useFormContext } from "react-hook-form";
 import { getKeyByValue, valueToLowerCase } from "../../utils/helpers";
 import InputWrapper from "../InputWrapper";
@@ -194,22 +193,3 @@ const Password = ({ fieldData, name, labelFor, ...wrapProps }) => {
 
 export default Password;
 
-Password.propTypes = {
-  fieldData: PropTypes.shape({
-    cssClass: PropTypes.string,
-    placeholder: PropTypes.string,
-    isRequired: PropTypes.bool,
-    type: PropTypes.string,
-    size: PropTypes.string,
-    subLabelPlacement: PropTypes.string,
-    inputs: PropTypes.array,
-    errorMessage: PropTypes.string,
-    hasPasswordStrengthIndicator: PropTypes.bool,
-    hasPasswordVisibilityToggle: PropTypes.bool,
-    minPasswordStrength: PropTypes.string,
-  }),
-  value: PropTypes.string,
-  name: PropTypes.string,
-  labelFor: PropTypes.string,
-  wrapProps: PropTypes.object,
-};

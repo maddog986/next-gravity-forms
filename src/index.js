@@ -1,6 +1,3 @@
-// https://github.com/codifytools/react-npm-package-boilerplate/blob/master/package.json
-
-import PropTypes from "prop-types";
 import React, {
   useState,
   useRef,
@@ -11,7 +8,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import FormContent from "./components/FormContent";
 import { handleGravityFormsValidationErrors } from "./utils/manageErrors";
 import scrollToElement from "./utils/scrollToElement";
-import getDefaultValues from "./utils/getDefaultVlaues";
+import getDefaultValues from "./utils/getDefaultValues";
 import { submissionHasOneFieldEntry } from "./utils/manageFormData";
 import formatPayload from "./utils/formatPayload";
 import FormBuilder from "./container/FormBuilder";
@@ -221,16 +218,5 @@ const GravityFormForm = forwardRef(
 );
 
 GravityFormForm.displayName = "GravityFormForm";
-
-GravityFormForm.propTypes = {
-  errorCallback: PropTypes.func,
-  data: PropTypes.object.isRequired,
-  successCallback: PropTypes.func,
-  presetValues: PropTypes.shape({}),
-  helperText: PropTypes.shape({}),
-  helperFieldsSettings: PropTypes.object,
-  navigate: PropTypes.func,
-  customFormFields: PropTypes.object,
-};
 
 export default GravityFormForm;

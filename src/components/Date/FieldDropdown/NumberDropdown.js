@@ -1,5 +1,4 @@
 import React, { forwardRef } from "react";
-import PropTypes from "prop-types";
 
 const NumberDropdown = forwardRef(
   (
@@ -60,18 +59,5 @@ const NumberDropdown = forwardRef(
 
 NumberDropdown.displayName = "NumberDropdown";
 
-NumberDropdown.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  selectedValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  tabIndex: PropTypes.number,
-  disabled: PropTypes.bool,
-  placeholder: PropTypes.string,
-  startNumber: PropTypes.number.isRequired,
-  endNumber: PropTypes.number.isRequired,
-  onChange: PropTypes.func.isRequired,
-  isRequired: PropTypes.bool,
-  fieldName: PropTypes.string.isRequired,
-};
 
 export default NumberDropdown;

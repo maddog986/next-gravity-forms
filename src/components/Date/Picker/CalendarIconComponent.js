@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import CalendarIcon from "../../../assets/img/datepicker";
 
 const CalendarIconComponent = ({
@@ -23,10 +22,5 @@ const CalendarIconComponent = ({
   return null;
 };
 
-CalendarIconComponent.propTypes = {
-  calendarIconTypeLower: PropTypes.string.isRequired,
-  calendarIconUrl: PropTypes.string,
-  datepicker: PropTypes.object.isRequired,
-};
 
 export default CalendarIconComponent;

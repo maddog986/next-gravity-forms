@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import { object, string } from "prop-types";
 
 const StrengthIndicator = ({ labelFor, score = "blank", strings }) => {
   return (
@@ -13,10 +12,5 @@ const StrengthIndicator = ({ labelFor, score = "blank", strings }) => {
   );
 };
 
-StrengthIndicator.propTypes = {
-  score: string,
-  labelFor: string.isRequired,
-  strings: object.isRequired,
-};
 
 export default StrengthIndicator;

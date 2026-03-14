@@ -1,5 +1,4 @@
 import React, { forwardRef, useState } from "react";
-import PropTypes from "prop-types";
 import classNames from "classnames";
 import { useDropzone } from "react-dropzone";
 import { mimeTypesObject, escHtml } from "./helpers";
@@ -176,17 +175,5 @@ const MultiFileupload = forwardRef(
 
 MultiFileupload.displayName = "MultiFileupload";
 
-MultiFileupload.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.number,
-  databaseId: PropTypes.number,
-  accept: PropTypes.array,
-  strings: PropTypes.object,
-  maxFileSize: PropTypes.number,
-  maxFiles: PropTypes.number,
-  rulesMessages: PropTypes.object,
-  setValue: PropTypes.func,
-  hiddenFieldId: PropTypes.string,
-};
 
 export default MultiFileupload;

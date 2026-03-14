@@ -1,4 +1,3 @@
-import { bool, object, oneOfType, string } from "prop-types";
 import React from "react";
 import FormGeneralError from "../FormGeneralError";
 import FormHeading from "../FormHeading";
@@ -33,10 +32,5 @@ const FormContent = ({ generalError, form, confirmation }) => {
   );
 };
 
-FormContent.propTypes = {
-  generalError: string.isRequired,
-  form: object.isRequired,
-  confirmation: oneOfType([bool, object]),
-};
 
 export default FormContent;

@@ -1,5 +1,4 @@
 import React, { useRef, Suspense } from "react";
-import PropTypes from "prop-types";
 import { useFormContext, Controller } from "react-hook-form";
 import classNames from "classnames";
 import InputWrapper from "../InputWrapper";
@@ -154,22 +153,5 @@ const FileUpload = ({ fieldData, name, labelFor, ...wrapProps }) => {
   );
 };
 
-FileUpload.propTypes = {
-  presetValue: PropTypes.string,
-  fieldData: PropTypes.shape({
-    isRequired: PropTypes.bool,
-    maxFileSize: PropTypes.number,
-    errorMessage: PropTypes.string,
-    allowedExtensions: PropTypes.arrayOf(PropTypes.string),
-    maxFiles: PropTypes.number,
-    canAcceptMultipleFiles: PropTypes.bool,
-    id: PropTypes.number,
-    defaultValue: PropTypes.string,
-    description: PropTypes.string,
-  }),
-  name: PropTypes.string.isRequired,
-  labelFor: PropTypes.string,
-  wrapProps: PropTypes.object,
-};
 
 export default FileUpload;

@@ -1,6 +1,5 @@
 import React from "react";
 import classnames from "classnames";
-import PropTypes from "prop-types";
 import { useFormContext } from "react-hook-form";
 import InputWrapper from "../../components/InputWrapper";
 import MultiSelectEnhancedUI from "./MultiSelectEnhancedUI";
@@ -110,20 +109,3 @@ const Select = ({ fieldData, name, labelFor, ...wrapProps }) => {
 
 export default Select;
 
-Select.propTypes = {
-  name: PropTypes.string,
-  labelFor: PropTypes.string,
-  fieldData: PropTypes.shape({
-    choices: PropTypes.array,
-    cssClass: PropTypes.string,
-    isRequired: PropTypes.bool,
-    size: PropTypes.string,
-    placeholder: PropTypes.string,
-    hasEnhancedUI: PropTypes.bool,
-    errorMessage: PropTypes.string,
-    type: PropTypes.string,
-    autoComplete: PropTypes.string,
-  }),
-  register: PropTypes.func,
-  wrapProps: PropTypes.object,
-};

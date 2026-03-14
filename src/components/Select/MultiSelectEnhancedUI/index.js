@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import classnames from "classnames";
-import PropTypes from "prop-types";
 import Select from "react-select";
 import { Controller } from "react-hook-form";
 import { useSettings } from "../../../providers/SettingsContext";
@@ -84,20 +83,3 @@ const MultiSelectEnhancedUI = ({
 
 export default MultiSelectEnhancedUI;
 
-MultiSelectEnhancedUI.propTypes = {
-  control: PropTypes.object.isRequired,
-  cssClass: PropTypes.string,
-  id: PropTypes.string,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      isSelected: PropTypes.bool,
-      text: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  size: PropTypes.string,
-  isRequired: PropTypes.bool,
-  name: PropTypes.string.isRequired,
-  isMulti: PropTypes.bool,
-  defaultValue: PropTypes.string,
-};

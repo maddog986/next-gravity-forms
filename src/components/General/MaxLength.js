@@ -1,4 +1,3 @@
-import { number, string } from "prop-types";
 import React from "react";
 import { useSettings } from "../../providers/SettingsContext";
 import { interpolateString } from "../../utils/helpers";
@@ -22,9 +21,5 @@ const MaxLength = ({ name, maxLength }) => {
   );
 };
 
-MaxLength.propTypes = {
-  maxLength: number.isRequired,
-  name: string.isRequired,
-};
 
 export default MaxLength;

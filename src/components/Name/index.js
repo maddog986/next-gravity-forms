@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useFormContext } from "react-hook-form";
 import { Controller } from "react-hook-form";
 import InputWrapper from "../InputWrapper";
@@ -127,19 +126,3 @@ const Name = ({ fieldData, name, labelFor, ...wrapProps }) => {
 
 export default Name;
 
-Name.propTypes = {
-  fieldData: PropTypes.shape({
-    cssClass: PropTypes.string,
-    inputMaskValue: PropTypes.string,
-    isRequired: PropTypes.bool,
-    type: PropTypes.string,
-    size: PropTypes.string,
-    inputs: PropTypes.array,
-    subLabelPlacement: PropTypes.string,
-    errorMessage: PropTypes.string,
-    hasAutocomplete: PropTypes.bool,
-  }),
-  name: PropTypes.string,
-  labelFor: PropTypes.string,
-  wrapProps: PropTypes.object,
-};

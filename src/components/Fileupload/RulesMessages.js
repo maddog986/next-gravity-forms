@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import { bool, node, number } from "prop-types";
 
 const RulesMessages = ({ isGFValidationError, databaseId, id, children }) => {
   return (
@@ -16,11 +15,5 @@ const RulesMessages = ({ isGFValidationError, databaseId, id, children }) => {
   );
 };
 
-RulesMessages.propTypes = {
-  isGFValidationError: bool.isRequired,
-  databaseId: number.isRequired,
-  id: number.isRequired,
-  children: node.isRequired,
-};
 
 export default RulesMessages;

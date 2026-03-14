@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useFormContext } from "react-hook-form";
 import getFieldError from "../../utils/getFieldError";
 import { valueToLowerCase } from "../../utils/helpers";
@@ -111,20 +110,3 @@ const Email = ({ fieldData, name, labelFor, ...wrapProps }) => {
 
 export default Email;
 
-Email.propTypes = {
-  fieldData: PropTypes.shape({
-    cssClass: PropTypes.string,
-    placeholder: PropTypes.string,
-    isRequired: PropTypes.bool,
-    type: PropTypes.string,
-    size: PropTypes.string,
-    subLabelPlacement: PropTypes.string,
-    inputs: PropTypes.array,
-    errorMessage: PropTypes.string,
-    hasAutocomplete: PropTypes.bool,
-  }),
-  value: PropTypes.string,
-  name: PropTypes.string,
-  labelFor: PropTypes.string,
-  wrapProps: PropTypes.object,
-};

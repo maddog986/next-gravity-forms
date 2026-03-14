@@ -1,6 +1,5 @@
 // SettingsProvider component for managing global settings
 import React, { createContext, useContext } from "react";
-import PropTypes from "prop-types";
 import strings from "../utils/strings";
 import fieldsSettings from "../utils/fieldsSettings";
 import mergeDeep from "../utils/mergeDeep";
@@ -39,9 +38,3 @@ export const SettingsProvider = ({
 
 export const useSettings = () => useContext(SettingsContext);
 
-SettingsProvider.propTypes = {
-  helperText: PropTypes.object,
-  form: PropTypes.object.isRequired,
-  helperFieldsSettings: PropTypes.object,
-  children: PropTypes.node.isRequired,
-};
