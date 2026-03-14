@@ -1,6 +1,6 @@
 # Folders
 node_modules
-dist
+# dist — committed for GitHub install
 coverage
 
 # Output of 'npm pack'
