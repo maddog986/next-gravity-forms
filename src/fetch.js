@@ -24,18 +24,18 @@ async function fetchAPI(body, { baseUrl, isMultipart } = {}) {
   return json.data;
 }
 
-export async function submitGravityForm({ id, fieldValues }) {
+export async function submitGravityForm({ id, fieldValues, entryMeta }) {
   const isFileUpload = fieldValues.some((field) =>
     field.hasOwnProperty("fileUploadValues")
   );
 
   if (isFileUpload) {
-    return submitFormWithFile({ id, fieldValues });
+    return submitFormWithFile({ id, fieldValues, entryMeta });
   } else {
     return fetchAPI(
       {
         query: submitMutationQuery,
-        variables: { id, fieldValues },
+        variables: { id, fieldValues, entryMeta },
       },
       {
         baseUrl: process.env.NEXT_PUBLIC_WORDPRESS_FORM_SUBMIT_URL,
@@ -44,7 +44,7 @@ export async function submitGravityForm({ id, fieldValues }) {
   }
 }
 
-async function submitFormWithFile({ id, fieldValues }) {
+async function submitFormWithFile({ id, fieldValues, entryMeta }) {
   const formData = new FormData();
   const operations = {
     query: submitMutationQuery,
@@ -54,6 +54,7 @@ async function submitFormWithFile({ id, fieldValues }) {
         ...field,
         fileUploadValues: null, // we're going to send files via map
       })),
+      entryMeta,
     },
   };
 

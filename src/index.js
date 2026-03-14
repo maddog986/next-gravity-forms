@@ -30,6 +30,7 @@ const GravityFormForm = forwardRef(
     {
       data,
       presetValues = null,
+      metaValues = null,
       successCallback = () => {},
       errorCallback = () => {},
       navigate,
@@ -125,6 +126,7 @@ const GravityFormForm = forwardRef(
             const submitRes = await submitGravityForm({
               id: databaseId,
               fieldValues: formRes,
+              entryMeta: metaValues,
             });
 
             if (
