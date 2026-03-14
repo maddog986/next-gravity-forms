@@ -11,13 +11,15 @@
  * https://github.com/harness-software/wp-graphql-gravity-forms/blob/develop/docs/submitting-forms.md
  */
 import formatDate from "./formatDate";
+import formatTime from "./formatTime";
+import formatAddress from "./formatAddress";
 
 const formatter = ({ id, fieldResponse, serverDataItem, clientData }) => {
-  const { type, inputs, choices } = serverDataItem;
+  const { type, inputs, choices, timeFormat } = serverDataItem;
   switch (type) {
     case "ADDRESS":
       return {
-        addressValues: fieldResponse, // @TODO does it work?
+        addressValues: formatAddress(fieldResponse),
       };
     case "CAPTCHA":
       return {
@@ -89,6 +91,11 @@ const formatter = ({ id, fieldResponse, serverDataItem, clientData }) => {
       return {
         value,
       };
+    case "TIME": {
+      return {
+        value: formatTime(fieldResponse, timeFormat),
+      };
+    }
     case "DATE":
       // eslint-disable-next-line no-case-declarations
       const { dateFormat, dateType } = serverDataItem;

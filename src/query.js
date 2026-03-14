@@ -16,7 +16,7 @@ import {
   checkboxFieldFragment,
 } from "./components/SelectorList/query";
 import { consentFieldFragment } from "./components/Consent/query";
-
+import { timeFieldFragment } from "./components/Time/query";
 import { dateFieldFragment } from "./components/Date/query";
 import { sectionFieldFragment } from "./components/Section/query";
 import { textareaFieldFragment } from "./components/Textarea/query";
@@ -26,6 +26,7 @@ import { fileuploadFieldFragment } from "./components/Fileupload/query";
 import { nameFieldFragment } from "./components/Name/query";
 import { pageFieldFragment } from "./container/FormBuilder/PageNav/query";
 import { passwordFieldFragment } from "./components/Password/query";
+import { addressFieldFragment } from "./components/Address/query";
 
 export const submitMutationQuery = /* GraphQL */ `
   mutation submitForm($id: ID!, $fieldValues: [FormFieldValuesInput]!, $entryMeta: EntryMetaInput) {
@@ -47,6 +48,7 @@ export const gravityFormQuery = /* GraphQL */ `
       labelPlacement
       subLabelPlacement
       title
+      cssClass
       submitButton {
         ${submitButtonFragment}
       }
@@ -54,6 +56,11 @@ export const gravityFormQuery = /* GraphQL */ `
         ${formConfirmationFragment}
       }
       hasHoneypot
+      entryLimits {
+        hasLimit
+        limitReachedMessage
+        maxEntries
+      }
       formFields(first: 999){
         nodes {
           displayOnly
@@ -84,6 +91,8 @@ export const gravityFormQuery = /* GraphQL */ `
           ${consentFieldFragment}
           ${websiteFieldFragment}
           ${passwordFieldFragment}
+          ${timeFieldFragment}
+          ${addressFieldFragment}
         }
       }
       pagination {

@@ -22,6 +22,8 @@ import { checkConditionalRendering } from "../../components/InputWrapper/helpers
 import Number from "../../components/Number";
 import Consent from "../../components/Consent";
 import Password from "../../components/Password";
+import TimeField from "../../components/Time";
+import Address from "../../components/Address";
 
 const FieldBuilder = ({
   databaseId,
@@ -167,6 +169,8 @@ const FieldBuilder = ({
         return <Fileupload key={id} {...props} />;
       case "TEXTAREA":
         return <Textarea key={id} {...props} />;
+      case "TIME":
+        return <TimeField key={id} {...props} />;
       case "SELECT":
       case "MULTISELECT":
         return <Select key={id} {...props} />;
@@ -181,6 +185,8 @@ const FieldBuilder = ({
         return <Consent key={id} {...props} />;
       case "PASSWORD":
         return <Password key={id} {...props} />;
+      case "ADDRESS":
+        return <Address key={id} {...props} />;
       default:
         return null;
     }

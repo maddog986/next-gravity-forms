@@ -37,7 +37,7 @@ const SelectorList = ({ fieldData, name, labelFor, ...wrapProps }) => {
       {...wrapProps}
     >
       <div className={`gfield_${type}`} id={`input_${databaseId}_${id}`}>
-        {choices.map(({ text, value }, index) => {
+        {choices.map(({ text, value, isDisabled }, index) => {
           const choiceID = type === "checkbox" ? index + 1 : index;
           return (
             <div
@@ -61,8 +61,8 @@ const SelectorList = ({ fieldData, name, labelFor, ...wrapProps }) => {
                 })}
                 type={type}
                 value={value}
+                disabled={isDisabled}
               />
-              &nbsp;
               <label
                 className="gform-field-label gform-field-label--type-inline"
                 htmlFor={`choice_${databaseId}_${id}_${choiceID}`}
