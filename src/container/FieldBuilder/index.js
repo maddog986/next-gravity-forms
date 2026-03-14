@@ -63,6 +63,13 @@ const FieldBuilder = ({
         ? autocompleteAttribute
         : undefined;
 
+    // Resolve effective labelPlacement: use field-level if set and not INHERIT,
+    // otherwise fall back to the form-level labelPlacement
+    const effectiveLabelPlacement =
+      labelPlacement && labelPlacement !== "INHERIT"
+        ? labelPlacement
+        : formLayoutProps?.labelPlacement;
+
     const fieldData = {
       ...field,
       isRequired: field.isRequired && !isHidden,
@@ -76,7 +83,7 @@ const FieldBuilder = ({
       field.cssClass,
       { gfield_contains_required: isRequired },
       { gform_hidden: type === "HIDDEN" },
-      { "hidden-label": islabelHidden(labelPlacement) },
+      { "hidden-label": islabelHidden(effectiveLabelPlacement) },
       {
         [`gfield--width-${getFieldWidthClass(layoutGridColumnSpan)}`]:
           layoutGridColumnSpan,
