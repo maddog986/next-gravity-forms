@@ -32,10 +32,12 @@ const PhoneField = ({ fieldData, name, labelFor, ...wrapProps }) => {
 
   const isStandard = "standard" === valueToLowerCase(phoneFormat);
 
+  const phoneErrorMessage =
+    errorMessage || strings.errors.pattern.phone;
+
   const {
     control,
     formState: { errors },
-    resetField,
   } = useFormContext();
 
   const describedBy = `gfield_description_${labelFor?.replace("name_", "")}`;
@@ -52,7 +54,6 @@ const PhoneField = ({ fieldData, name, labelFor, ...wrapProps }) => {
         defaultValue=""
         control={control}
         render={({ field: { value, ref, ...rest } }) => {
-          const [detail, setDetail] = useState(null);
           const [showMask, setShowMask] = useState(false);
 
           return (
@@ -73,15 +74,7 @@ const PhoneField = ({ fieldData, name, labelFor, ...wrapProps }) => {
                   autoComplete={autoComplete}
                   {...rest}
                   onFocus={() => setShowMask(true)}
-                  onBlur={() => {
-                    setShowMask(false);
-
-                    if (detail?.input && !detail.isValid) {
-                      resetField(name, "");
-                      setDetail(null);
-                    }
-                  }}
-                  onMask={(event) => setDetail(event.detail)}
+                  onBlur={() => setShowMask(false)}
                 />
               ) : (
                 <Input
@@ -99,6 +92,23 @@ const PhoneField = ({ fieldData, name, labelFor, ...wrapProps }) => {
         }}
         rules={{
           required: isRequired && (errorMessage || strings.errors.required),
+          validate: (value) => {
+            if (!value) return true;
+            if (isStandard) {
+              // Standard US format: must match (XXX) XXX-XXXX completely
+              const pattern = generatePattern(mask);
+              if (!new RegExp(pattern).test(value)) {
+                return phoneErrorMessage;
+              }
+            } else {
+              // International: must contain at least 7 digits
+              const digits = value.replace(/\D/g, "");
+              if (digits.length < 7) {
+                return phoneErrorMessage;
+              }
+            }
+            return true;
+          },
         }}
       />
     </InputWrapper>
