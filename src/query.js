@@ -29,7 +29,7 @@ import { passwordFieldFragment } from "./components/Password/query";
 import { addressFieldFragment } from "./components/Address/query";
 
 export const submitMutationQuery = /* GraphQL */ `
-  mutation submitForm($id: ID!, $fieldValues: [FormFieldValuesInput]!, $entryMeta: EntryMetaInput) {
+  mutation submitForm($id: ID!, $fieldValues: [FormFieldValuesInput]!, $entryMeta: SubmitFormMetaInput) {
     submitGfForm(input: { id: $id, fieldValues: $fieldValues, entryMeta: $entryMeta }) {
       errors {
         id
